@@ -208,6 +208,25 @@ build-static-linux-amd64: go.sum $(BUILDDIR)/
 	$(DOCKER) cp gaiabinary:/usr/local/bin/ $(BUILDDIR)/gaiad-linux-amd64
 	$(DOCKER) rm -f gaiabinary
 
+# Build static binaries for linux/arm64 using docker buildx
+# Pulled from neutron-org/neutron: https://github.com/neutron-org/neutron/blob/v4.2.2/Makefile#L107
+build-static-linux-arm64: go.sum $(BUILDDIR)/
+	$(DOCKER) buildx create --name gaiabuilder || true
+	$(DOCKER) buildx use gaiabuilder
+	$(DOCKER) buildx build \
+		--build-arg GO_VERSION=$(GO_VERSION) \
+		--build-arg GIT_VERSION=$(VERSION) \
+		--build-arg GIT_COMMIT=$(COMMIT) \
+		--build-arg BUILD_TAGS=$(build_tags_comma_sep),muslc \
+		--platform linux/arm64 \
+		-t gaiad-static-arm64 \
+		-f Dockerfile . \
+		--load
+	$(DOCKER) rm -f gaiabinary || true
+	$(DOCKER) create -ti --name gaiabinary gaiad-static-arm64
+	$(DOCKER) cp gaiabinary:/usr/local/bin/ $(BUILDDIR)/gaiad-linux-arm64
+	$(DOCKER) rm -f gaiabinary
+
 
 # uses goreleaser to create static binaries for darwin on local machine
 goreleaser-build-local:
@@ -333,7 +352,7 @@ lint:
 lint-fix:
 	@echo "--> Running linter"
 	@go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(golangci_version)
-	@$(golangci_lint_cmd) run --fix --out-format=tab --issues-exit-code=0
+	@$(golangci_lint_cmd) run --fix --issues-exit-code=0
 
 format:
 	@go install mvdan.cc/gofumpt@latest
@@ -409,3 +428,15 @@ proto-update-deps:
 	$(DOCKER) run --rm -v $(CURDIR)/proto:/workspace --workdir /workspace $(protoImageName) buf mod update
 
 .PHONY: proto-all proto-gen proto-swagger-gen proto-format proto-lint proto-check-breaking proto-update-deps
+
+###############################################################################
+###                                Open Telemetry                           ###
+###############################################################################
+
+start-telemetry-server:
+	cd contrib/telemetry && docker compose up -d
+
+stop-telemetry-server:
+	cd contrib/telemetry && docker compose down --remove-orphans
+
+.PHONY: start-telemetry-server stop-telemetry-server
