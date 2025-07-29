@@ -874,8 +874,8 @@ github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd/go.mod h1:sE
 github.com/coinbase/kryptology v1.8.0/go.mod h1:RYXOAPdzOGUe3qlSFkMGn58i3xUA8hmxYHksuq+8ciI=
 github.com/coinbase/rosetta-sdk-go v0.7.9 h1:lqllBjMnazTjIqYrOGv8h8jxjg9+hJazIGZr9ZvoCcA=
 github.com/coinbase/rosetta-sdk-go v0.7.9/go.mod h1:0/knutI7XGVqXmmH4OQD8OckFrbQ8yMsUZTG7FXCR2M=
-github.com/cometbft/cometbft v0.38.17 h1:FkrQNbAjiFqXydeAO81FUzriL4Bz0abYxN/eOHrQGOk=
-github.com/cometbft/cometbft v0.38.17/go.mod h1:5l0SkgeLRXi6bBfQuevXjKqML1jjfJJlvI1Ulp02/o4=
+github.com/cometbft/cometbft v0.38.18 h1:1ZHYMdu0S75YxFM13LlPXnOwiIpUW5z9TKMQtTIALpw=
+github.com/cometbft/cometbft v0.38.18/go.mod h1:PlOQgf3jQorep+g6oVnJgtP65TJvBJoLiXjGaMdNxBE=
 github.com/cometbft/cometbft-db v1.0.4 h1:cezb8yx/ZWcF124wqUtAFjAuDksS1y1yXedvtprUFxs=
 github.com/cometbft/cometbft-db v1.0.4/go.mod h1:M+BtHAGU2XLrpUxo3Nn1nOCcnVCiLM9yx5OuT0u5SCA=
 github.com/consensys/bavard v0.1.8-0.20210406032232-f3452dc9b572/go.mod h1:Bpd0/3mZuaj6Sj+PqrmIquiOKy397AKGThQPaGzNXAQ=
@@ -900,8 +900,8 @@ github.com/cosmos/cosmos-db v1.1.1 h1:FezFSU37AlBC8S98NlSagL76oqBRWq/prTPvFcEJNC
 github.com/cosmos/cosmos-db v1.1.1/go.mod h1:AghjcIPqdhSLP/2Z0yha5xPH3nLnskz81pBx3tcVSAw=
 github.com/cosmos/cosmos-proto v1.0.0-beta.5 h1:eNcayDLpip+zVLRLYafhzLvQlSmyab+RC5W7ZfmxJLA=
 github.com/cosmos/cosmos-proto v1.0.0-beta.5/go.mod h1:hQGLpiIUloJBMdQMMWb/4wRApmI9hjHH05nefC0Ojec=
-github.com/cosmos/cosmos-sdk v0.53.2 h1:QUok0dUzdxZedwunZ7N1GgJrctaGGGO8DUnKqkVRf1k=
-github.com/cosmos/cosmos-sdk v0.53.2/go.mod h1:90S054hIbadFB1MlXVZVC5w0QbKfd1P4b79zT+vvJxw=
+github.com/cosmos/cosmos-sdk v0.53.3 h1:GbDJNUP9OD0gGDVnjecZVZr0ZReD1BtIIxmtgrAsWiw=
+github.com/cosmos/cosmos-sdk v0.53.3/go.mod h1:90S054hIbadFB1MlXVZVC5w0QbKfd1P4b79zT+vvJxw=
 github.com/cosmos/go-bip39 v1.0.0 h1:pcomnQdrdH22njcAatO0yWojsUnCO3y2tNoV1cb6hHY=
 github.com/cosmos/go-bip39 v1.0.0/go.mod h1:RNJv0H/pOIVgxw6KS7QeX2a0Uo0aKUlfhZ4xuwvCdJw=
 github.com/cosmos/gogogateway v1.2.0 h1:Ae/OivNhp8DqBi/sh2A8a1D0y638GpL3tkmLQAiKxTE=
