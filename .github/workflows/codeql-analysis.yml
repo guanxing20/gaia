@@ -15,7 +15,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: depot-ubuntu-22.04-4
     permissions:
       actions: read
       contents: read
@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - uses: actions/setup-go@v5
       with:
         go-version: "1.24"
